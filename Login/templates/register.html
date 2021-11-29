@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <form action="/register" class="credentials" method="POST">
+        <h2 class="header">User Registration</h2>
+        <div class="txtb">
+            <label for="username">Username</label>
+            <input type="username" id="username" name="username" placeholder="--enter username--" required/>
+        </div>
+
+        <div class="txtb">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="--enter password--" required/>
+        </div>
+
+        <div class="txtb">
+            <label for="password">Confirm Password</label>
+            <input type="password" id="password" name="password_confirm" placeholder="--re-enter password--" required/>
+        </div>
+
+        <input type="submit" class="logbtn" value="Register">
+    </form>
+</div>
+{% endblock %}
