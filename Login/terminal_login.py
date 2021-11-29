@@ -29,7 +29,7 @@ def register():
         sleep(2)
         login()
     else:
-        print("Password does not much. Register Again...\n")
+        print("Password does not match. Register Again...\n")
         sleep(2)
         register()
 
