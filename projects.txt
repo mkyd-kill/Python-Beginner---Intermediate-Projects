@@ -1,0 +1,15 @@
+Beginner Python Projects – December 2021
+1.	Dice Roll simulator
+2.	Guess the number game
+3.	Word guessing game
+4.	Hangman game
+5.	21 number game
+6.	Rock paper scissors game
+7.	Random password generator
+8.	Binary Search
+9.	Sending emails with python
+10.	Medium/Article Reader
+11.	Alarm Clock
+12.	URL shortener
+13.	Weather app
+14.	Key logger
