@@ -9,8 +9,9 @@ credentials = {}
 
 def register():
     """This is the new user registration function"""
-    usr_name = input("Enter username: ")
-    password = input("Enter password: ")
+    print("----USER REGISTRATION FORM----")
+    usr_name = input("Enter username: ").lower()
+    password = input("Enter password: ").lower()
     password2 = ""
     try:
         if len(password) < 5:
@@ -18,7 +19,7 @@ def register():
             sleep(1)
             register()
         else:
-            password2 = input("Re-enter password: ")
+            password2 = input("Re-enter password: ").lower()
     except Exception:
         print("Error detected.")
     if password == password2:
@@ -35,13 +36,20 @@ def register():
 
 def login():
     """User login function"""
-    user = input("Enter username: ")
-    password = input("Enter password: ")
+    print("----USER LOGIN FORM----")
+    user = input("Enter username: ").lower()
+    password = input("Enter password: ").lower()
     try:
         if len(password) < 5:
             print("Password must be greater than 5 characters. Try again...\n")
             sleep(1)
             login()
+        elif user not in  credentials.keys() and password not in credentials.values():
+                print("User Does not Exist. Please Register First.\n")
+                sleep(1)
+                print("Redirecting to Register page...")
+                sleep(2)
+                register()
         else:
             for username, passwrd in credentials.items():
                 if username == user and passwrd == password:
@@ -50,7 +58,10 @@ def login():
                     print("Redirecting to dashboard...\n")
                     sleep(2)
                     print(f"Welcome {username.title()},\nYou have Successfully Logged in.")
+                elif user != username or passwrd != password:
+                    print("Invalid Input Credentials. Try Again...\n")
+                    sleep(1)
     except Exception:
         print("Invalid user credentials. Try again...\n")
         login()
-register()
+login()
