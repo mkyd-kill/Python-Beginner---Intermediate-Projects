@@ -8,7 +8,7 @@ answers = ['rock', 'paper', 'scissors']
     Tie: when both answers are the same """
 
 def Game() -> str:
-    user_input = str(input("\nInput Answer: "))
+    user_input = str(input("\nInput Answer: ")).lower()
     comp_choice = random.choice(answers)
     try:
         if user_input == comp_choice:

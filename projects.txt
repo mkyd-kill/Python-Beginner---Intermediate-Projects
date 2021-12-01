@@ -13,3 +13,4 @@ Beginner Python Projects – December 2021
 12.	URL shortener
 13.	Weather app
 14.	Key logger
+15. 2048 console game/ GUI
