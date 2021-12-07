@@ -1,11 +1,11 @@
 ## This is a guess the number game
-import random
+from random import randint
 
 count = 0
 
 user = input("Hello, what\'s your name: ")
 
-number = random.randint(1, 30)
+number = randint(1, 30)
 
 print(f"Welcome {user.title()}, I\'m thinking of a number between 1 and 30.")
 print("You have only 5 tries to guess it right")

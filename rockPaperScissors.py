@@ -1,4 +1,4 @@
-import random
+from random import choice
 from time import sleep
 
 answers = ['rock', 'paper', 'scissors']
@@ -9,7 +9,7 @@ answers = ['rock', 'paper', 'scissors']
 
 def Game() -> str:
     user_input = str(input("\nInput Answer: ")).lower()
-    comp_choice = random.choice(answers)
+    comp_choice = choice(answers)
     try:
         if user_input == comp_choice:
             print("TIE. You Both choose {}".format(user_input))

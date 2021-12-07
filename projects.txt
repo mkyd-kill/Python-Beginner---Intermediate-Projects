@@ -17,6 +17,7 @@ Beginner Python Projects – December 2021
 16. Tic Tac Toe console/ GUI game
 17. Linear Search
 18. Sorting
+19. Library System OOP
 
 Automation with Python
 1. Messaging

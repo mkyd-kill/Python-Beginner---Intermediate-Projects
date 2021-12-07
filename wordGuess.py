@@ -1,8 +1,8 @@
-import random
+from random import choice
 
 word_list = ['python', 'java', 'php', 'geeks', 'computer', 'rainbow', 'science', 'programming', 'mathematics', 'player', 'condition', 'reverse', 'water', 'board', 'choice', 'keypad', 'movie', 'javascript', 'development', 'quite', 'queen', 'zigzag', 'abort', 'brilliant']
 
-choosen_word = random.choice(word_list)
+choosen_word = choice(word_list)
 
 print("Welcome to Guess the Word Game")
 print("Instructions: Your role is to guess a word. If it is correct you win, else you loss")

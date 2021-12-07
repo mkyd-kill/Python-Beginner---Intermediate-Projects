@@ -1,4 +1,4 @@
-import random
+from random import randint
 from time import sleep
 
 def dice():
@@ -16,7 +16,7 @@ def dice():
     for steps in range(5, 0, -1):
         turn = str(input("Press A to roll dice, B to quit game: "))
         if turn == 'A' 'a':
-            scores = random.randint(1, 6)
+            scores = randint(1, 6)
             print(f"You have {steps} remaining. Good Luck!")
             print(f'You rolled a {scores}\n')
             user.append(scores)
