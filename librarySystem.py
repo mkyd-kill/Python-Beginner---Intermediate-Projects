@@ -19,39 +19,30 @@ class Library:
     def booksAvailable(self):
         print("Available Books are: \n")
         for number, book in self.availableBooks.items():
-            if book in self.availableBooks.values():
-                print(book)
-            else:
-                print("There are no books available")
-                break
-        return self.availableBooks
-
-    def addBook(self, book):
-        for item in self.availableBooks.keys():
-            if book not in self.availableBooks.values():
-                self.availableBooks[item] = book
-        return self.availableBooks
+            print(f"[{number}] {book}")
 
     def removeBook(self, book):
-        if book in self.availableBooks.values():
-            del self.availableBooks[book]
-        else:
-            print(f"The Requested Book {book} is Unavailable")
-        return self.availableBooks
+        for num, item in self.availableBooks.items():
+            if book == item:
+                del self.availableBooks[num]
+            else:
+                print(f"The Requested Book `{item}` is Unavailable")
+                break
 
 class Student(Library):
-    def borrowBook(self, item):
-        for book in self.booksAvailable():
-            if item == book:
+    def borrowBook(self, book_num):
+        for num, item in self.availableBooks.items():
+            if book_num == num:
                 self.inventory.append(item)
-                self.removeBook(item)
-        return self.inventory
 
     def returnBook(self, item):
-        for book in self.booksAvailable():
-            if book == item:
-                self.inventory.pop(item)
-                self.addBook(item)
+        for num, book in self.availableBooks.items():
+            if num == item:
+                if book in self.inventory:
+                    self.inventory.remove(book)
+                else:
+                    print("You have no books to return")
+                    pass
         return self.inventory
 
     def checkInventory(self):
@@ -60,7 +51,7 @@ class Student(Library):
             if book in self.inventory:
                 print(book)
             else:
-                print("You have borrowed books.")
+                print("You have no borrowed books.")
                 break
 
 if __name__ == "__main__": 
@@ -75,16 +66,16 @@ if __name__ == "__main__":
         5.exit
         """)
     while run:
-        choice = int(input("\nEnter Choice\n:> "))
+        choice = int(input("\nEnter Menu Choice\n:> "))
         try:
             if choice == 1:
                 library.booksAvailable()
             elif choice == 2:
-                book = str(input("\nEnter the Book Title\n:> "))
-                student.borrowBook(book)
+                book_num = int(input("\nEnter Book Index you wish to Borrow\nExample: 1 for The Last Battle\n:> "))
+                student.borrowBook(book_num)
             elif choice == 3:
-                book = str(input("\nEnter Title of Book wished to be returned\n:> "))
-                student.returnBook(book)
+                book_num = int(input("\nEnter Index of the Book you wish to return\nExample: 1 for The Last Battle\n:> "))
+                student.returnBook(book_num)
             elif choice == 4:
                 student.checkInventory()
             elif choice == 5:
